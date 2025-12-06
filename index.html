@@ -14,6 +14,12 @@
     <span class="brand-title">TWOFOLD VISUALS</span>
   </div>
 
+  <button class="nav-toggle" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
   <nav class="nav-links">
     <a href="index.html">Home</a>
     <a href="videography.html">Videography</a>
@@ -25,13 +31,13 @@
   </nav>
 </header>
 
+
     <main>
       <section class="hero">
         <div class="hero-left">
           <div class="hero-eyebrow">Full day wedding coverage</div>
           <h1 class="hero-title">
-            Wedding photo and video that feel high end
-            <span>without luxury only pricing.</span>
+            Wedding photo and video that feel high end without luxury only pricing.</span>
           </h1>
           <p class="hero-sub">
             TwoFold Visuals focuses on full day wedding coverage with simple pricing and real films and galleries,
@@ -203,5 +209,15 @@
       <div>team@twofoldvisuals.com</div>
     </footer>
   </div>
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      document.body.classList.toggle('nav-open');
+    });
+  }
+</script>
 </body>
 </html>
