@@ -9,20 +9,27 @@
 <body>
   <div class="page">
     <header>
-      <div class="logo">
-        <img src="logo.png" alt="TwoFold Visuals logo" class="logo-img">
-        <div class="logo-text">TwoFold Visuals</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:0.75rem;">
-        <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="portfolio.html">Portfolio</a>
-          <a href="book.html">Book Us</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-        <a href="book.html" class="btn-outline btn">Book now</a>
-      </div>
-    </header>
+  <div class="logo-area">
+    <img src="logo.png" class="logo-img" alt="TwoFold Visuals">
+    <span class="brand-title">TWOFOLD VISUALS</span>
+  </div>
+
+  <button class="nav-toggle" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="videography.html">Videography</a>
+    <a href="photography.html">Photography</a>
+    <a href="pricing.html">Today's Pricing</a>
+    <a href="faq.html">FAQ</a>
+    <a href="book.html">Book</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
     <main>
       <section>
@@ -77,5 +84,15 @@
       &copy; <span>TwoFold Visuals</span>. All rights reserved.
     </footer>
   </div>
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      document.body.classList.toggle('nav-open');
+    });
+  }
+</script>
 </body>
 </html>
