@@ -1,0 +1,30 @@
+diff --git a/styles.css b/styles.css
+--- a/styles.css
++++ b/styles.css
+@@ -75,9 +75,9 @@ header {
+ .logo {
+   display: flex;
+   align-items: center;
+-  gap: 0.9rem;
++  gap: 1.2rem;
+ }
+ .logo-img {
+-  height: 52px;
++  height: 95px;
+   width: auto;
+   background: transparent !important;
+ }
+diff --git a/index.html b/index.html
+--- a/index.html
++++ b/index.html
+@@ -15,9 +15,6 @@
+       <div class="logo">
+         <img src="logo.png" alt="TwoFold Visuals logo" class="logo-img">
+         <div class="logo-text-wrap">
+-          <div class="logo-text-main">TWOFOLD VISUALS</div>
+-          <div class="logo-text-tagline">
+-            Wedding photo and video across Iowa, Minnesota, Nebraska, Illinois, Florida, Georgia, and Tennessee.
+-          </div>
++          <div class="logo-text-main">TWOFOLD VISUALS</div>
+         </div>
+       </div>
