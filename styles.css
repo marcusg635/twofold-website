@@ -92,7 +92,7 @@ header {
 }
 
 .logo-img {
-  height: 95px; /* or 110px if you want it even bigger */
+  height: 150px; /* or 110px if you want it even bigger */
   width: auto;
   background: transparent !important;
 }
