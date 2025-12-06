@@ -87,16 +87,33 @@ header {
 
 .logo {
   display: flex;
-  flex-direction: column; /* stack logo + text */
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
+  flex-direction: row;      /* put logo + text side-by-side */
+  align-items: center;      /* align vertically */
+  gap: 1rem;                /* space between logo and text */
+  margin: 0;
+  padding: 0.5rem 0;
 }
 
 .logo-img {
-  height: 170px; /* or 110px if you want it even bigger */
+  height: 250px;   /* 50%+ larger */
   width: auto;
+  object-fit: contain;
   background: transparent !important;
+}
+
+/* New header layout */
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-title {
+  font-size: 2.4rem; /* much bigger page title text */
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-main);
 }
 
 .logo-text-wrap {
@@ -106,11 +123,13 @@ header {
 }
 
 .logo-text-main {
+  font-size: 2rem;       /* MUCH bigger */
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  font-size: 1.05rem;
   color: var(--text-main);
+  margin: 0;
+  padding: 0;
 }
 
 .logo-text-tagline {
