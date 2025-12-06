@@ -562,12 +562,39 @@ footer span {
    ================ */
 
 @media (max-width: 900px) {
-  .nav-links {
-    display: none;
+  /* Stack header vertically and center things */
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
   }
 
-  header {
-    margin-bottom: 2rem;
+  .logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  /* Shrink logo on phones so it doesn't eat the screen */
+  .logo-img {
+    height: 120px;
+  }
+
+  /* Shrink brand title so it fits nicely */
+  .brand-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  /* Show nav again on mobile, wrap items */
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem;
+    font-size: 0.8rem;
   }
 
   .hero {
@@ -588,13 +615,14 @@ footer span {
   }
 
   .page {
-    padding-inline: 1.2rem;
+    padding-inline: 1.1rem;
   }
 
   .form-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  /* Hide any extra small tagline text if it still exists */
   .logo-text-tagline {
     display: none;
   }
