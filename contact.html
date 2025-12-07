@@ -8,19 +8,19 @@
 </head>
 <body>
   <div class="page">
-   <header>
-  <div class="logo-area">
-    <img src="logo.png" class="logo-img" alt="TwoFold Visuals">
-    <span class="brand-title">TWOFOLD VISUALS</span>
-  </div>
+    <header>
+      <div class="logo-area">
+        <img src="logo.png" class="logo-img" alt="TwoFold Visuals">
+        <span class="brand-title">TWOFOLD VISUALS</span>
+      </div>
 
-  <button class="nav-toggle" aria-label="Toggle navigation">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-  <nav class="nav-links">
+      <nav class="nav-links" role="navigation" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="videography.html">Videography</a>
         <a href="photography.html">Photography</a>
@@ -28,10 +28,9 @@
         <a href="faq.html">FAQ</a>
         <a href="book.html">How To Book</a>
         <a href="contact.html">Contact</a>
-	<a href="booking.html" class="btn-booking">
-  Book Your Wedding
-</a>
-</header>
+        <a href="booking.html" class="btn-booking">Book Your Wedding</a>
+      </nav>
+    </header>
 
     <main>
       <section>
@@ -47,6 +46,7 @@
       </section>
 
       <section>
+        <!-- Note: mailto forms are inconsistent across devices. Consider a server or third-party form handler later. -->
         <form
           class="contact-form"
           action="mailto:team@twofoldvisuals.com?subject=New%20wedding%20inquiry%20from%20TwoFold%20Visuals%20website"
@@ -56,31 +56,37 @@
           <div class="form-grid">
             <div class="form-field">
               <label for="name">Your name</label>
-              <input type="text" id="name" name="Name" required>
+              <input type="text" id="name" name="name" required>
             </div>
+
             <div class="form-field">
               <label for="email">Email</label>
-              <input type="email" id="email" name="Email" required>
+              <input type="email" id="email" name="email" required>
             </div>
+
             <div class="form-field">
               <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="Phone" required>
+              <input type="tel" id="phone" name="phone" required>
             </div>
+
             <div class="form-field">
               <label for="date">Wedding date</label>
-              <input type="date" id="date" name="Wedding date" required>
+              <input type="date" id="date" name="wedding_date" required>
             </div>
+
             <div class="form-field">
               <label for="ceremony">Ceremony location (if known)</label>
-              <input type="text" id="ceremony" name="Ceremony location">
+              <input type="text" id="ceremony" name="ceremony_location">
             </div>
+
             <div class="form-field">
               <label for="reception">Reception location (if known)</label>
-              <input type="text" id="reception" name="Reception location">
+              <input type="text" id="reception" name="reception_location">
             </div>
+
             <div class="form-field">
               <label for="service">What are you interested in</label>
-              <select id="service" name="Service type" required>
+              <select id="service" name="service_type" required>
                 <option value="">Please select</option>
                 <option value="video">Videography only</option>
                 <option value="photo">Photography only</option>
@@ -88,9 +94,10 @@
                 <option value="not-sure">Not sure yet</option>
               </select>
             </div>
+
             <div class="form-field">
-              <label for="budget">Approximate budget for photo and or video</label>
-              <input type="text" id="budget" name="Budget">
+              <label for="budget">Approximate budget for photo and/or video</label>
+              <input type="text" id="budget" name="budget">
             </div>
           </div>
 
@@ -98,7 +105,7 @@
             <label for="message">Anything else we should know</label>
             <textarea
               id="message"
-              name="Message"
+              name="message"
               rows="5"
               required
               placeholder="Special requests, must have moments, or anything that feels important to you."
@@ -118,16 +125,17 @@
       <div>team@twofoldvisuals.com</div>
     </footer>
   </div>
-<script>
-  const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
 
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      document.body.classList.toggle('nav-open');
-    });
-  }
-</script>
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = document.body.classList.toggle('nav-open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+  </script>
 </body>
 </html>
-
