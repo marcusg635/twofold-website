@@ -56,7 +56,9 @@
         <div class="grid-3">
           <div class="card">
             <h3>Videography only</h3>
-            <p style="font-size:1.1rem;font-weight:600;margin:0.2rem 0;">From <span id="video-price"></span> dollars</p>
+            <p style="font-size:1.1rem;font-weight:600;margin:0.2rem 0;">
+              From <span id="video-price"></span> dollars
+            </p>
             <ul class="bullet-list">
               <li>Full day coverage</li>
               <li>Highlight film in 4K</li>
@@ -65,7 +67,9 @@
           </div>
           <div class="card">
             <h3>Photography only</h3>
-            <p style="font-size:1.1rem;font-weight:600;margin:0.2rem 0;">From <span id="photo-price"></span> dollars</p>
+            <p style="font-size:1.1rem;font-weight:600;margin:0.2rem 0;">
+              From <span id="photo-price"></span> dollars
+            </p>
             <ul class="bullet-list">
               <li>Full day coverage with Kelly as lead photographer when available</li>
               <li>Edited gallery usually between 300 and 500 photos</li>
@@ -73,7 +77,9 @@
           </div>
           <div class="card">
             <h3>Photo and video together</h3>
-            <p style="font-size:1.1rem;font-weight:600;margin:0.2rem 0;">From <span id="combo-price"></span> dollars</p>
+            <p style="font-size:1.1rem;font-weight:600;margin:0.2rem 0;">
+              From <span id="combo-price"></span> dollars
+            </p>
             <ul class="bullet-list">
               <li>Full day photo and video coverage</li>
               <li>Highlight film plus photo gallery</li>
@@ -129,6 +135,7 @@
       <div>team@twofoldvisuals.com</div>
     </footer>
   </div>
+
 <script>
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
@@ -139,25 +146,44 @@
     });
   }
 </script>
+
 <script>
-  const URL = https://docs.google.com/spreadsheets/d/e/2PACX-1vSTaVu2ejFYC5vDQAR4qUTvQLwczaGbn1LXWPjjXvVtA-Xg7zAEdxCzs2UVDG0QtFvZEDCFkKv8V4xk/pub?output=csv;
+  const URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSTaVu2ejFYC5vDQAR4qUTvQLwczaGbn1LXWPjjXvVtA-Xg7zAEdxCzs2UVDG0QtFvZEDCFkKv8V4xk/pub?output=csv";
 
   fetch(URL)
     .then(r => r.text())
     .then(t => {
       const lines = t.trim().split("\n");
+      if (lines.length < 2) return;
+
       const headers = lines[0].split(",");
       const values = lines[1].split(",");
       const data = {};
-  
+
       headers.forEach((h, i) => {
-        data[h.trim()] = values[i].trim();
+        data[h.trim()] = (values[i] || "").trim();
       });
 
-      document.getElementById("video-price").textContent = data.VideoPrice;
-      document.getElementById("photo-price").textContent = data.PhotoPrice;
-      document.getElementById("combo-price").textContent = data.ComboPrice;
+      const videoSpan = document.getElementById("video-price");
+      const photoSpan = document.getElementById("photo-price");
+      const comboSpan = document.getElementById("combo-price");
+
+      if (videoSpan) videoSpan.textContent = data.VideoPrice || "500";
+      if (photoSpan) photoSpan.textContent = data.PhotoPrice || "500";
+      if (comboSpan) comboSpan.textContent = data.ComboPrice || "1000";
+    })
+    .catch(err => {
+      console.error("Error loading prices:", err);
+
+      const videoSpan = document.getElementById("video-price");
+      const photoSpan = document.getElementById("photo-price");
+      const comboSpan = document.getElementById("combo-price");
+
+      if (videoSpan) videoSpan.textContent = "500";
+      if (photoSpan) photoSpan.textContent = "500";
+      if (comboSpan) comboSpan.textContent = "1000";
     });
 </script>
+
 </body>
 </html>
