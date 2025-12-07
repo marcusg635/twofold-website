@@ -666,29 +666,56 @@ footer span {
   box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
 
-/* Make image fill and crop without distortion */
+/* Gallery tile system — append to styles.css */
+.gallery-grid,
+.photo-grid,
+.kelly-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  align-items: start;
+  list-style: none;
+}
+
+/* wrapper for each tile */
+.gallery-item,
+.photo-item {
+  width: 100%;
+  aspect-ratio: 4 / 3;       /* change to 3/2 or 16/9 if you prefer */
+  overflow: hidden;
+  border-radius: 8px;
+  background: #efefef;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+}
+
+/* image fills and crops to tile */
 .gallery-item img,
 .photo-item img,
-.gallery-grid img,
+.kelly-gallery img,
 .photo-grid img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* crop to fill container */
+  object-fit: cover;
   display: block;
-  -o-object-fit: cover;
+  loading: lazy;
 }
 
-/* Optional: make first image span wider for emphasis */
-/* .gallery-item:first-child { grid-column: span 2; } */
+/* Fallback for old browsers that ignore aspect-ratio */
+@supports not (aspect-ratio: 1/1) {
+  .gallery-item, .photo-item { height: 220px; }
+}
 
-/* Responsive tweak */
+/* Mobile */
 @media (max-width: 520px) {
-  .gallery-grid,
-  .photo-grid {
+  .gallery-grid, .photo-grid, .kelly-gallery {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
-  .gallery-item,
-  .photo-item { aspect-ratio: 4 / 3; }
+  .gallery-item, .photo-item { aspect-ratio: 4 / 3; }
 }
+
+}
+
 
