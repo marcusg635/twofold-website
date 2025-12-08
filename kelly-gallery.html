@@ -93,7 +93,7 @@
       const text = await response.text();
       const rows = text.trim().split('\n').map(r => r.split(','));
       const headers = rows[0];
-      const imageIndex = headers.indexOf('image'); // make sure your column is exactly "image"
+      const imageIndex = headers.indexOf('url'); // make sure your column is exactly "image"
       const grid = document.getElementById('portfolio-grid');
 
       for (let i = 1; i < rows.length; i++) {
@@ -116,3 +116,4 @@
   </script>
 </body>
 </html>
+
