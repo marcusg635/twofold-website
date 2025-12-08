@@ -5,22 +5,43 @@
   <title>Kelly Hunter Photo Gallery | TwoFold Visuals</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* gallery-specific styles */
+    .portfolio-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .portfolio-item {
+      width: 250px; /* square width */
+      height: 250px; /* square height */
+      overflow: hidden;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
 </head>
 <body>
   <div class="page">
     <header>
-  <div class="logo-area">
-    <img src="logo.png" class="logo-img" alt="TwoFold Visuals">
-    <span class="brand-title">TWOFOLD VISUALS</span>
-  </div>
+      <div class="logo-area">
+        <img src="logo.png" class="logo-img" alt="TwoFold Visuals">
+        <span class="brand-title">TWOFOLD VISUALS</span>
+      </div>
 
-  <button class="nav-toggle" aria-label="Toggle navigation">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-   <nav class="nav-links">
+      <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="videography.html">Videography</a>
         <a href="photography.html">Photography</a>
@@ -28,10 +49,9 @@
         <a href="faq.html">FAQ</a>
         <a href="book.html">How To Book</a>
         <a href="contact.html">Contact</a>
-	<a href="booking.html" class="btn-booking">
-  Book Your Wedding
-</a>
-</header>
+        <a href="booking.html" class="btn-booking">Book Your Wedding</a>
+      </nav>
+    </header>
 
     <main>
       <section>
@@ -45,32 +65,8 @@
       </section>
 
       <section>
-        <div class="portfolio-grid">
-          <article class="portfolio-item">
-            <img src="kelly-photo1.jpg" alt="Wedding photo one" style="border-radius:12px;" />
-          </article>
-          <article class="portfolio-item">
-            <img src="kelly5.jpg" alt="Wedding photo two" style="border-radius:12px;" />
-          </article>
-          <article class="portfolio-item">
-            <img src="kelly-photo3.jpg" alt="Wedding photo three" style="border-radius:12px;" />
-          </article>
-          <article class="portfolio-item">
-            <img src="kelly6.jpg" alt="Wedding photo three" style="border-radius:12px;" />
-          </article>
-		  <article class="portfolio-item">
-            <img src="kelly7.jpg" alt="Wedding photo three" style="border-radius:12px;" />
-          </article>
-		  <article class="portfolio-item">
-            <img src="kelly8.jpg" alt="Wedding photo three" style="border-radius:12px;" />
-		  </article>
-		  <article class="portfolio-item">
-            <img src="kelly9.jpg" alt="Wedding photo three" style="border-radius:12px;" />
-		  </article>
-		  <article class="portfolio-item">
-            <img src="kelly10.jpg" alt="Wedding photo three" style="border-radius:12px;" />
-		   </article>
-          <!-- Duplicate blocks and change filenames to add more photos -->
+        <div class="portfolio-grid" id="portfolio-grid">
+          <!-- Images will be injected here by JS -->
         </div>
       </section>
     </main>
@@ -80,17 +76,43 @@
       <div>team@twofoldvisuals.com</div>
     </footer>
   </div>
-<script>
-  const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
 
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      document.body.classList.toggle('nav-open');
-    });
-  }
-</script>
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        document.body.classList.toggle('nav-open');
+      });
+    }
+
+    // --- Load gallery from Google Sheet CSV ---
+    async function loadGallery() {
+      const sheetCsvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSTaVu2ejFYC5vDQAR4qUTvQLwczaGbn1LXWPjjXvVtA-Xg7zAEdxCzs2UVDG0QtFvZEDCFkKv8V4xk/pub?gid=1663901927&single=true&output=csv';
+      const response = await fetch(sheetCsvUrl);
+      const text = await response.text();
+      const rows = text.trim().split('\n').map(r => r.split(','));
+      const headers = rows[0];
+      const imageIndex = headers.indexOf('image'); // make sure your column is exactly "image"
+      const grid = document.getElementById('portfolio-grid');
+
+      for (let i = 1; i < rows.length; i++) {
+        const imgUrl = rows[i][imageIndex];
+        if (!imgUrl) continue;
+
+        const article = document.createElement('article');
+        article.className = 'portfolio-item';
+
+        const img = document.createElement('img');
+        img.src = imgUrl.trim();
+        img.alt = 'Wedding photo';
+
+        article.appendChild(img);
+        grid.appendChild(article);
+      }
+    }
+
+    loadGallery();
+  </script>
 </body>
 </html>
-
-
