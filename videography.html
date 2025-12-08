@@ -150,6 +150,41 @@
     });
   }
 </script>
+<script>
+(function() {
+  function safe(val) { return val || ""; }
+
+  const payload = {
+    datetime: new Date().toISOString(),
+    url: safe(window.location.href),
+    referrer: safe(document.referrer),
+    useragent: safe(navigator.userAgent),
+    language: safe(navigator.language),
+    platform: safe(navigator.platform),
+    cookies: navigator.cookieEnabled ? "yes" : "no",
+    online: navigator.onLine ? "yes" : "no",
+    viewport_width: window.innerWidth,
+    viewport_height: window.innerHeight,
+    screen_width: screen.width,
+    screen_height: screen.height,
+    screen_colorDepth: screen.colorDepth,
+    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    history_length: history.length,
+    java_enabled: navigator.javaEnabled(),
+    connection_type: (navigator.connection && navigator.connection.effectiveType) || "",
+    hardware_concurrency: navigator.hardwareConcurrency || "",
+    device_memory: navigator.deviceMemory || "",
+    touch_support: ('ontouchstart' in window) ? "yes" : "no"
+  };
+
+  fetch(https://script.google.com/macros/s/AKfycbwFDIUZz5MeJ0S6ZXxwboCRU9VdYgB6BNreIXUWwmrWhEpvqPmtPq9YOjWf5OoK3f43tA/exec, {
+    method: "POST",
+    mode: "no-cors",
+    contentType: "application/json",
+    body: JSON.stringify(payload)
+  });
+})();
+</script>
 </body>
 </html>
 
