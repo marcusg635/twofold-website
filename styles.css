@@ -916,3 +916,120 @@ footer span {
   }
   .gallery-item, .photo-item { aspect-ratio: 4 / 3; }
 }
+
+/* ================
+   MODERN VISUAL REFRESH
+   ================ */
+
+:root {
+  --shadow-soft: 0 10px 30px rgba(16, 12, 7, 0.08);
+  --shadow-hover: 0 18px 38px rgba(16, 12, 7, 0.12);
+}
+
+body {
+  background:
+    radial-gradient(circle at top right, rgba(158, 129, 74, 0.12), transparent 34%),
+    radial-gradient(circle at top left, rgba(133, 105, 58, 0.08), transparent 36%),
+    var(--bg-main);
+}
+
+.page {
+  padding-top: 1.5rem;
+}
+
+header {
+  position: sticky;
+  top: 0.7rem;
+  z-index: 20;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(232, 228, 222, 0.9);
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 8px 22px rgba(23, 18, 11, 0.06);
+}
+
+.nav-links {
+  gap: 1rem;
+}
+
+.nav-links a {
+  font-weight: 600;
+}
+
+.hero-banner,
+.page-hero {
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  margin-left: 0;
+}
+
+.hero-banner {
+  min-height: 560px;
+}
+
+.hero-banner::after,
+.page-hero::after {
+  background: linear-gradient(130deg, rgba(16, 13, 10, 0.74) 0%, rgba(16, 13, 10, 0.38) 58%, rgba(158, 129, 74, 0.25) 100%);
+}
+
+section {
+  margin-bottom: 4rem;
+}
+
+.card,
+.portfolio-item,
+.contact-form,
+.faq-item,
+.gallery-item,
+.photo-item {
+  box-shadow: var(--shadow-soft);
+  border-color: rgba(209, 201, 188, 0.8);
+}
+
+.card:hover,
+.portfolio-item:hover,
+.gallery-item:hover,
+.photo-item:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+.gallery-item,
+.photo-item {
+  border-radius: var(--radius-md);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+footer {
+  padding: 1.2rem 1rem 0;
+}
+
+@media (max-width: 900px) {
+  header {
+    top: 0.35rem;
+    padding: 0.75rem 0.9rem;
+  }
+
+  .nav-links {
+    padding-top: 0.35rem;
+  }
+
+  body.nav-open .nav-links {
+    display: flex;
+    padding: 0.7rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-soft);
+    background: rgba(250, 249, 247, 0.96);
+  }
+
+  .hero-banner,
+  .page-hero {
+    border-radius: 14px;
+  }
+
+  .hero-banner {
+    min-height: 440px;
+  }
+}
