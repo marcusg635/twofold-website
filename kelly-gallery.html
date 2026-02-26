@@ -28,30 +28,54 @@
   </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="logo-area">
+
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-area">
         <img src="logo.png" class="logo-img" alt="TwoFold Visuals">
         <span class="brand-title">TWOFOLD VISUALS</span>
-      </div>
-
-      <button class="nav-toggle" aria-label="Toggle navigation">
+      </a>
+      <nav class="nav-links" role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="videography.html">Films</a>
+        <a href="photography.html">Photos</a>
+        <a href="photo-video.html">Photo and Video</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="index.html#reviews">Reviews</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn nav-cta">Check availability</a>
+      <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
+    </div>
+  </header>
 
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="videography.html">Videography</a>
-        <a href="photography.html">Photography</a>
-        <a href="pricing.html">Today's Pricing</a>
-        <a href="faq.html">FAQ</a>
-        <a href="book.html">How To Book</a>
-        <a href="contact.html">Contact</a>
-        <a href="booking.html" class="btn-booking">Book Your Wedding</a>
-      </nav>
-    </header>
+  <div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="mobile-nav-top">
+      <a href="index.html" class="logo-area">
+        <img src="logo.png" class="logo-img" alt="TwoFold Visuals">
+        <span class="brand-title">TWOFOLD VISUALS</span>
+      </a>
+      <button class="mobile-nav-close" aria-label="Close navigation">&#x2715;</button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="videography.html">Films</a>
+      <a href="photography.html">Photos</a>
+      <a href="photo-video.html">Photo and Video</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="mobile-nav-footer">
+      <a href="contact.html" class="btn" style="width:100%;text-align:center;">Check availability</a>
+    </div>
+  </div>
+
+  <div class="page">
 
     <main>
       <section>
@@ -77,42 +101,41 @@
     </footer>
   </div>
 
-  <script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (navToggle && navLinks) {
-      navToggle.addEventListener('click', () => {
-        document.body.classList.toggle('nav-open');
-      });
+    <script>
+    var siteHeader = document.getElementById('site-header');
+    window.addEventListener('scroll', function () {
+      siteHeader.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    var navToggle = document.querySelector('.nav-toggle');
+    var mobileNav = document.getElementById('mobile-nav');
+    var mobileNavClose = document.querySelector('.mobile-nav-close');
+    var mobileNavLinks = document.querySelectorAll('.mobile-nav-links a, .mobile-nav-footer a');
+
+    function openMobileNav() {
+      mobileNav.classList.add('is-open');
+      mobileNav.setAttribute('aria-hidden', 'false');
+      navToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
     }
 
-    // --- Load gallery from Google Sheet CSV ---
-    async function loadGallery() {
-      const sheetCsvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSTaVu2ejFYC5vDQAR4qUTvQLwczaGbn1LXWPjjXvVtA-Xg7zAEdxCzs2UVDG0QtFvZEDCFkKv8V4xk/pub?gid=1663901927&single=true&output=csv';
-      const response = await fetch(sheetCsvUrl);
-      const text = await response.text();
-      const rows = text.trim().split('\n').map(r => r.split(','));
-      const headers = rows[0];
-      const imageIndex = headers.indexOf('url'); // make sure your column is exactly "image"
-      const grid = document.getElementById('portfolio-grid');
-
-      for (let i = 1; i < rows.length; i++) {
-        const imgUrl = rows[i][imageIndex];
-        if (!imgUrl) continue;
-
-        const article = document.createElement('article');
-        article.className = 'portfolio-item';
-
-        const img = document.createElement('img');
-        img.src = imgUrl.trim();
-        img.alt = 'Wedding photo';
-
-        article.appendChild(img);
-        grid.appendChild(article);
-      }
+    function closeMobileNav() {
+      mobileNav.classList.remove('is-open');
+      mobileNav.setAttribute('aria-hidden', 'true');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
     }
 
-    loadGallery();
+    if (navToggle) navToggle.addEventListener('click', openMobileNav);
+    if (mobileNavClose) mobileNavClose.addEventListener('click', closeMobileNav);
+
+    mobileNavLinks.forEach(function (link) {
+      link.addEventListener('click', closeMobileNav);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) closeMobileNav();
+    });
   </script>
 <script>
 (function() {
@@ -141,10 +164,10 @@
     touch_support: ('ontouchstart' in window) ? "yes" : "no"
   };
 
-  fetch(https://script.google.com/macros/s/AKfycbwFDIUZz5MeJ0S6ZXxwboCRU9VdYgB6BNreIXUWwmrWhEpvqPmtPq9YOjWf5OoK3f43tA/exec, {
+  fetch("https://script.google.com/macros/s/AKfycbwFDIUZz5MeJ0S6ZXxwboCRU9VdYgB6BNreIXUWwmrWhEpvqPmtPq9YOjWf5OoK3f43tA/exec", {
     method: "POST",
     mode: "no-cors",
-    contentType: "application/json",
+    headers: {"Content-Type": "application/json"},
     body: JSON.stringify(payload)
   });
 })();
