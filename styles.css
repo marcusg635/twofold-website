@@ -3,21 +3,21 @@
    ================ */
 
 :root {
-  --bg-main: #050816;
-  --bg-alt: #0b1020;
-  --surface: #111827;
-  --surface-soft: #1f2937;
+  --bg-main: #faf9f7;
+  --bg-alt: #f3f0eb;
+  --surface: #ffffff;
+  --surface-soft: #f8f6f2;
 
-  --border-soft: #374151;
-  --border-strong: #4b5563;
+  --border-soft: #e5e0d8;
+  --border-strong: #d1c9bc;
 
-  --accent: #f5c542;
-  --accent-deep: #d29b1f;
-  --accent-soft: rgba(245, 197, 66, 0.16);
+  --accent: #b89a5a;
+  --accent-deep: #9a7e44;
+  --accent-soft: rgba(184, 154, 90, 0.12);
 
-  --text-main: #f9fafb;
-  --text-soft: #d1d5db;
-  --text-muted: #9ca3af;
+  --text-main: #1a1714;
+  --text-soft: #5c5448;
+  --text-muted: #8f8678;
 
   --radius-lg: 20px;
   --radius-md: 14px;
@@ -37,23 +37,10 @@ body {
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top, #1f2933 0, #050816 40%, #020617 100%);
+  background: var(--bg-main);
   color: var(--text-main);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
-}
-
-/* Subtle giant logo watermark */
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: url("logo.png") center/80vw no-repeat;
-  opacity: 0.05;
-  pointer-events: none;
-  z-index: -1;
-  filter: brightness(1.2) saturate(1.1);
 }
 
 a {
@@ -96,7 +83,7 @@ header {
 }
 
 .logo-img {
-  height: 220px; /* desktop size */
+  height: 48px; /* desktop size */
   width: auto;
   object-fit: contain;
   background: transparent !important;
@@ -104,8 +91,8 @@ header {
 
 .brand-title,
 .logo-text-main {
-  font-size: 2.2rem;
-  font-weight: 900;
+  font-size: 1.4rem;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-main);
@@ -200,13 +187,14 @@ header {
 }
 
 .btn {
-  background: linear-gradient(135deg, var(--accent), #f59e0b);
-  color: #111827;
-  box-shadow: 0 14px 30px rgba(245, 197, 66, 0.35);
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(184, 154, 90, 0.25);
 }
 
 .btn:hover {
-  background: linear-gradient(135deg, #f8cc5d, #fbbf24);
+  background: var(--accent-deep);
+  box-shadow: 0 4px 14px rgba(184, 154, 90, 0.35);
 }
 
 .btn-outline {
@@ -275,11 +263,11 @@ header {
 }
 
 .hero-right {
-  background: radial-gradient(circle at top left, #1f2937 0, #020617 72%);
+  background: var(--surface);
   border-radius: 22px;
   padding: 1.1rem;
-  border: 1px solid rgba(148, 163, 184, 0.4);
-  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 4px 20px rgba(26, 23, 20, 0.08);
 }
 
 .hero-video-label {
@@ -315,7 +303,7 @@ section {
   font-size: 1.8rem;
   font-weight: 580;
   margin-bottom: 0.4rem;
-  color: #f9fafb;
+  color: var(--text-main);
 }
 
 .section-sub {
@@ -358,7 +346,7 @@ main > section:nth-of-type(odd) .contact-form {
   padding: 1.2rem 1.3rem;
   font-size: 0.95rem;
   color: var(--text-soft);
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.7);
+  box-shadow: 0 2px 10px rgba(26, 23, 20, 0.06);
 }
 
 .card h3 {
@@ -420,7 +408,7 @@ main > section:nth-of-type(odd) .contact-form {
   padding: 0.9rem;
   font-size: 0.88rem;
   color: var(--text-soft);
-  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.8);
+  box-shadow: 0 2px 10px rgba(26, 23, 20, 0.06);
 }
 
 .portfolio-title {
@@ -449,7 +437,7 @@ main > section:nth-of-type(odd) .contact-form {
   background: var(--surface);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-soft);
-  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.85);
+  box-shadow: 0 2px 8px rgba(26, 23, 20, 0.05);
 }
 
 .faq-button {
@@ -492,7 +480,7 @@ main > section:nth-of-type(odd) .contact-form {
   border-radius: 22px;
   border: 1px solid var(--border-soft);
   padding: 1.4rem 1.5rem 1.6rem;
-  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.9);
+  box-shadow: 0 4px 18px rgba(26, 23, 20, 0.08);
 }
 
 .form-grid {
@@ -531,7 +519,7 @@ main > section:nth-of-type(odd) .contact-form {
 .form-field textarea:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 1px rgba(245, 197, 66, 0.4);
+  box-shadow: 0 0 0 1px rgba(184, 154, 90, 0.3);
 }
 
 .contact-note {
@@ -579,7 +567,7 @@ footer span {
   }
 
   .logo-img {
-    height: 90px;
+    height: 40px;
   }
 
   .brand-title,
@@ -643,30 +631,10 @@ footer span {
     display: none;
   }
 }
-/* Container */
-.gallery-grid,
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* adjust min width */
-  gap: 16px; /* spacing between boxes */
-  align-items: start;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
+/* ================
+   GALLERY / PHOTO GRID
+   ================ */
 
-/* Item wrapper */
-.gallery-item,
-.photo-item {
-  width: 100%;
-  aspect-ratio: 4 / 3; /* controls box shape — change to 3/2, 16/9, etc. */
-  overflow: hidden;
-  border-radius: 8px;
-  background: #eee; /* placeholder color while loading */
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-}
-
-/* Gallery tile system — append to styles.css */
 .gallery-grid,
 .photo-grid,
 .kelly-gallery {
@@ -679,18 +647,16 @@ footer span {
   list-style: none;
 }
 
-/* wrapper for each tile */
 .gallery-item,
 .photo-item {
   width: 100%;
-  aspect-ratio: 4 / 3;       /* change to 3/2 or 16/9 if you prefer */
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: 8px;
-  background: #efefef;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  background: var(--bg-alt);
+  box-shadow: 0 1px 4px rgba(26, 23, 20, 0.08);
 }
 
-/* image fills and crops to tile */
 .gallery-item img,
 .photo-item img,
 .kelly-gallery img,
@@ -699,15 +665,12 @@ footer span {
   height: 100%;
   object-fit: cover;
   display: block;
-  loading: lazy;
 }
 
-/* Fallback for old browsers that ignore aspect-ratio */
 @supports not (aspect-ratio: 1/1) {
   .gallery-item, .photo-item { height: 220px; }
 }
 
-/* Mobile */
 @media (max-width: 520px) {
   .gallery-grid, .photo-grid, .kelly-gallery {
     grid-template-columns: repeat(2, 1fr);
@@ -715,7 +678,3 @@ footer span {
   }
   .gallery-item, .photo-item { aspect-ratio: 4 / 3; }
 }
-
-}
-
-
