@@ -7,76 +7,71 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <header class="site-header" id="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="logo-area">
-        <img src="logo.png" class="logo-img" alt="TwoFold Visuals">
-        <span class="brand-title">TWOFOLD VISUALS</span>
-      </a>
-      <nav class="nav-links" role="navigation" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="videography.html">Films</a>
-        <a href="photography.html">Photos</a>
-        <a href="photo-video.html">Photo and Video</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="index.html#reviews">Reviews</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <a href="contact.html" class="btn nav-cta">Check availability</a>
-      <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+  <div class="page">
+    <header>
+      <a href="index.html" class="logo-area" style="text-decoration:none; color:inherit;">
+  <img src="logo.png" class="logo-img" alt="TwoFold Visuals">
+  <span class="brand-title">TWOFOLD VISUALS</span>
+</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-  </header>
 
-  <div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
-    <div class="mobile-nav-top">
-      <a href="index.html" class="logo-area">
-        <img src="logo.png" class="logo-img" alt="TwoFold Visuals">
-        <span class="brand-title">TWOFOLD VISUALS</span>
-      </a>
-      <button class="mobile-nav-close" aria-label="Close navigation">&#x2715;</button>
-    </div>
-    <nav class="mobile-nav-links">
-      <a href="index.html">Home</a>
-      <a href="videography.html">Films</a>
-      <a href="photography.html">Photos</a>
-      <a href="photo-video.html">Photo and Video</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="index.html#reviews">Reviews</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="mobile-nav-footer">
-      <a href="contact.html" class="btn" style="width:100%;text-align:center;">Check availability</a>
-    </div>
-  </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="videography.html">Videography</a>
+        <a href="photography.html">Photography</a>
+        <a href="pricing.html">Today's Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="book.html">How To Book</a>
+        <a href="contact.html">Contact</a>
+	<a href="booking.html" class="btn-booking">
+  Book Your Wedding
+</a>
+      </nav>
+    </header>
 
-  <div class="page">
     <main>
       <section class="hero">
-        <img src="kelly5.jpg" alt="" class="hero-bg" aria-hidden="true">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
+        <div class="hero-left">
           <div class="hero-eyebrow">Full day wedding coverage</div>
-          <h1 class="hero-title">Wedding photo and video that looks expensive, without the drama</h1>
-          <p class="hero-sub">Full day coverage. Straightforward pricing. Real weddings you can watch now.</p>
+          <h1 class="hero-title">
+          High-end wedding coverage<span>without the luxury price tag.</span>
+          </h1>
+          <p class="hero-sub">
+            The coverage couples actually need, without the industry markup.
+          </p>
           <div class="hero-actions">
-            <a href="videography.html" class="btn">Watch films</a>
-            <a href="pricing.html" class="btn-outline-white">View pricing</a>
+            <a href="pricing.html" class="btn">View today’s pricing</a>
+            <a href="videography.html" class="btn btn-outline">Watch wedding films</a>
+          </div>
+          <p class="hero-note">
+            No travel fees in multiple locations and states.
+          </p>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-video-label">Main wedding film promo</div>
+          <div style="position:relative;padding-bottom:56.25%;height:0;border-radius:16px;overflow:hidden;">
+            <iframe
+              src="https://www.youtube.com/embed/bU_MPSpnpGQ"
+              title="TwoFold Visuals promo"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+              allowfullscreen
+            ></iframe>
           </div>
         </div>
       </section>
 
       <section>
         <div class="section-header">
-          <div class="section-eyebrow">What we offer</div>
+          <div class="section-eyebrow">What we do</div>
           <h2 class="section-title">Full day wedding coverage built around real budgets.</h2>
           <p class="section-sub">
-            Book videography, photography, or both. Every option is full day coverage so you are not watching
-            the clock during your own wedding.
+            You can book videography, photography, or both. Every option is built around full day coverage so you
+            are not watching the clock during your own wedding.
           </p>
         </div>
         <div class="grid-3">
@@ -99,10 +94,10 @@
             </ul>
           </div>
           <div class="card">
-            <div class="card-pill">Photo and Video</div>
+            <div class="card-pill">Photo plus video</div>
             <h3>Combined coverage</h3>
             <ul class="bullet-list">
-              <li>One team planned around one timeline</li>
+              <li>One team planning around one timeline</li>
               <li>Consistent look between gallery and films</li>
               <li>Pricing that stays under many single service quotes</li>
             </ul>
@@ -112,151 +107,99 @@
 
       <section>
         <div class="section-header">
-          <div class="section-eyebrow">Pricing</div>
-          <h2 class="section-title">Straightforward pricing. No hidden fees.</h2>
-          <p class="section-sub">
-            Starting prices for weddings in Iowa, southern Georgia, and northern Florida. No travel fee in
-            these zones.
-          </p>
-        </div>
-        <div class="pricing-preview-grid">
-          <div class="pricing-preview-card">
-            <div class="pricing-preview-label">Videography</div>
-            <div class="pricing-preview-name">Video only</div>
-            <div class="pricing-preview-price">Starting at $<span class="hp-video-price">&#8212;</span></div>
-            <p class="pricing-preview-desc">Full day coverage. Highlight film in 4K. Audio from vows and speeches.</p>
-          </div>
-          <div class="pricing-preview-card">
-            <div class="pricing-preview-label">Photography</div>
-            <div class="pricing-preview-name">Photo only</div>
-            <div class="pricing-preview-price">Starting at $<span class="hp-photo-price">&#8212;</span></div>
-            <p class="pricing-preview-desc">Full day coverage. 300 to 500 edited photos. Clean, true to color editing.</p>
-          </div>
-          <div class="pricing-preview-card">
-            <div class="pricing-preview-label">Photo and Video</div>
-            <div class="pricing-preview-name">Combined coverage</div>
-            <div class="pricing-preview-price">Starting at $<span class="hp-combo-price">&#8212;</span></div>
-            <p class="pricing-preview-desc">Photo and video planned together. One timeline. One team.</p>
-          </div>
-        </div>
-        <div style="margin-top:1.2rem;">
-          <a href="pricing.html" class="btn btn-outline">See full pricing details</a>
-        </div>
-      </section>
-
-      <section>
-        <div class="section-header">
-          <div class="section-eyebrow">Films</div>
-          <h2 class="section-title">Watch real wedding films.</h2>
-          <p class="section-sub">
-            Watch full wedding films directly on this site without having to ask for examples.
-          </p>
-        </div>
-        <div class="film-grid">
-          <a href="https://www.youtube.com/watch?v=bU_MPSpnpGQ" target="_blank" rel="noopener" class="film-card">
-            <div class="film-card-thumb">
-              <img src="https://img.youtube.com/vi/bU_MPSpnpGQ/hqdefault.jpg" alt="TwoFold Visuals promo film thumbnail" loading="lazy">
-              <div class="film-card-play">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-              </div>
-            </div>
-            <div class="film-card-body">
-              <div class="film-card-label">Highlight Film</div>
-              <div class="film-card-title">TwoFold Visuals promo</div>
-              <div class="film-card-meta">Overview of coverage and style</div>
-            </div>
-          </a>
-          <a href="https://www.youtube.com/watch?v=Q6HFgue9hTs" target="_blank" rel="noopener" class="film-card">
-            <div class="film-card-thumb">
-              <img src="https://img.youtube.com/vi/Q6HFgue9hTs/hqdefault.jpg" alt="Wedding film one thumbnail" loading="lazy">
-              <div class="film-card-play">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-              </div>
-            </div>
-            <div class="film-card-body">
-              <div class="film-card-label">Highlight Film</div>
-              <div class="film-card-title">Wedding film</div>
-              <div class="film-card-meta">Real couple, full day story</div>
-            </div>
-          </a>
-          <a href="https://www.youtube.com/watch?v=KzD2poVOEDo" target="_blank" rel="noopener" class="film-card">
-            <div class="film-card-thumb">
-              <img src="https://img.youtube.com/vi/KzD2poVOEDo/hqdefault.jpg" alt="Wedding film two thumbnail" loading="lazy">
-              <div class="film-card-play">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-              </div>
-            </div>
-            <div class="film-card-body">
-              <div class="film-card-label">Highlight Film</div>
-              <div class="film-card-title">Wedding film</div>
-              <div class="film-card-meta">Full day captured in 4K</div>
-            </div>
-          </a>
-        </div>
-        <div style="margin-top:1.2rem;">
-          <a href="videography.html" class="btn btn-outline">View all films</a>
-        </div>
-      </section>
-
-      <section id="reviews">
-        <div class="section-header">
-          <div class="section-eyebrow">Reviews</div>
-          <h2 class="section-title">What couples say.</h2>
-        </div>
-        <div class="reviews-grid">
-          <div class="review-card">
-            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="review-text">They showed up, did the work, and delivered exactly what was promised. The film came back better than we expected. No drama at all.</p>
-            <div class="review-name">Sarah &amp; James</div>
-          </div>
-          <div class="review-card">
-            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="review-text">The pricing was honest and the final video was outstanding. We booked photo and video together and it was worth every dollar.</p>
-            <div class="review-name">Michelle &amp; Tom</div>
-          </div>
-          <div class="review-card">
-            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="review-text">Kelly was calm and easy to work with all day. Our gallery came back with over 400 edited photos and they all look real and natural.</p>
-            <div class="review-name">Rachel &amp; Dan</div>
-          </div>
-        </div>
-        <div style="margin-top:1.2rem;">
-          <a href="https://www.facebook.com/PrecisionDroneIowa/" target="_blank" rel="noopener" class="btn btn-outline">Read more reviews</a>
-        </div>
-      </section>
-
-      <section>
-        <div class="section-header">
           <div class="section-eyebrow">Booking process</div>
-          <h2 class="section-title">How booking works.</h2>
+          <h2 class="section-title">How booking with TwoFold Visuals works.</h2>
           <p class="section-sub">
-            You do not need every detail planned before you reach out.
+            The process is simple. You do not need to have every detail planned before you reach out.
           </p>
         </div>
         <div class="grid-3">
           <div class="card">
             <h3>Step one. Reach out.</h3>
             <p>
-              Send your names, date, contact info, and locations if you have them. No venue yet? No problem.
+              You send your names, date, contact information, and ceremony and reception locations if you have them.
+              If you do not have a venue yet, you can send that later. If the final locations are much farther than
+              expected, travel charges may change.
             </p>
           </div>
           <div class="card">
-            <h3>Step two. Confirm availability.</h3>
+            <h3>Step two. Availability and questions.</h3>
             <p>
-              We confirm if your date is open, share today's pricing, and answer questions. Phone or video
-              call available if you want to talk first.
+              We confirm if your date is open, show you today’s pricing for your location and what you want, and
+              answer questions. If you want, we can talk by phone or video to help you feel comfortable.
             </p>
           </div>
           <div class="card">
             <h3>Step three. Book and plan.</h3>
             <p>
-              Complete the booking agreement and payment. Timeline details come closer to the wedding day.
+              When you are ready, you complete the booking agreement and payment. Timeline details come later. Kelly
+              helps you build a realistic timeline closer to the wedding so it matches what is actually happening.
             </p>
           </div>
         </div>
-        <div style="margin-top:1.2rem;">
-          <a href="contact.html" class="btn">Check availability</a>
+      </section>
+
+      <section>
+        <div class="section-header">
+          <div class="section-eyebrow">Real work</div>
+          <h2 class="section-title">See wedding films and photos now.</h2>
+          <p class="section-sub">
+            You can watch wedding films and view wedding photography directly on this site without having to ask
+            for examples.
+          </p>
         </div>
+        <div class="grid-2">
+          <div>
+            <h3 style="font-size:1rem;margin-bottom:0.4rem;">Featured wedding films</h3>
+            <div class="portfolio-grid">
+              <div class="portfolio-item">
+                <div class="portfolio-title">Wedding film one</div>
+                <p class="portfolio-meta">Highlight from a wedding day.</p>
+                <div style="position:relative;padding-bottom:56.25%;height:0;border-radius:12px;overflow:hidden;margin-top:0.4rem;">
+                  <iframe
+                    src="https://www.youtube.com/embed/Q6HFgue9hTs"
+                    title="Wedding film one"
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+              <div class="portfolio-item">
+                <div class="portfolio-title">Wedding film two</div>
+                <p class="portfolio-meta">Another full day story in 4K.</p>
+                <div style="position:relative;padding-bottom:56.25%;height:0;border-radius:12px;overflow:hidden;margin-top:0.4rem;">
+                  <iframe
+                    src="https://www.youtube.com/embed/KzD2poVOEDo"
+                    title="Wedding film two"
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 style="font-size:1rem;margin-bottom:0.4rem;">Photo examples</h3>
+            <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:0.5rem;">
+              Kelly’s photo work is shown on the photography page with examples from real weddings.
+            </p>
+            <a href="photography.html" class="btn btn-outline">View wedding photography</a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-header">
+          <div class="section-eyebrow">Social proof</div>
+          <h2 class="section-title">See more and stay in touch.</h2>
+          <p class="section-sub">
+            You can also see social content and updates on our Facebook page. The page name shows our former brand
+            because the name is locked under Meta verification rules.
+          </p>
+        </div>
+        <a href="https://www.facebook.com/PrecisionDroneIowa/" target="_blank" class="btn btn-outline">
+          Visit our Facebook page
+        </a>
       </section>
     </main>
 
@@ -267,93 +210,49 @@
   </div>
 
   <script>
-    // Sticky header scroll state
-    const siteHeader = document.getElementById('site-header');
-    window.addEventListener('scroll', function () {
-      siteHeader.classList.toggle('scrolled', window.scrollY > 10);
-    }, { passive: true });
-
-    // Mobile nav
     const navToggle = document.querySelector('.nav-toggle');
-    const mobileNav = document.getElementById('mobile-nav');
-    const mobileNavClose = document.querySelector('.mobile-nav-close');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a, .mobile-nav-footer a');
+    const navLinks = document.querySelector('.nav-links');
 
-    function openMobileNav() {
-      mobileNav.classList.add('is-open');
-      mobileNav.setAttribute('aria-hidden', 'false');
-      navToggle.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeMobileNav() {
-      mobileNav.classList.remove('is-open');
-      mobileNav.setAttribute('aria-hidden', 'true');
-      navToggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-
-    if (navToggle) navToggle.addEventListener('click', openMobileNav);
-    if (mobileNavClose) mobileNavClose.addEventListener('click', closeMobileNav);
-
-    mobileNavLinks.forEach(function (link) {
-      link.addEventListener('click', closeMobileNav);
-    });
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) closeMobileNav();
-    });
-  </script>
-  <script>
-    // Load pricing preview from Google Sheets
-    var PRICE_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSTaVu2ejFYC5vDQAR4qUTvQLwczaGbn1LXWPjjXvVtA-Xg7zAEdxCzs2UVDG0QtFvZEDCFkKv8V4xk/pub?gid=849239570&single=true&output=csv";
-    fetch(PRICE_URL)
-      .then(function (r) { return r.text(); })
-      .then(function (t) {
-        var lines = t.trim().split("\n");
-        if (lines.length < 2) return;
-        var headers = lines[0].split(",");
-        var values = lines[1].split(",");
-        var data = {};
-        headers.forEach(function (h, i) { data[h.trim()] = (values[i] || "").trim(); });
-        document.querySelectorAll(".hp-video-price").forEach(function (el) { el.textContent = data.VideoPrice || ""; });
-        document.querySelectorAll(".hp-photo-price").forEach(function (el) { el.textContent = data.PhotoPrice || ""; });
-        document.querySelectorAll(".hp-combo-price").forEach(function (el) { el.textContent = data.ComboPrice || ""; });
-      })
-      .catch(function () {});
-  </script>
-  <script>
-    (function () {
-      function safe(val) { return val || ""; }
-      var payload = {
-        datetime: new Date().toISOString(),
-        url: safe(window.location.href),
-        referrer: safe(document.referrer),
-        useragent: safe(navigator.userAgent),
-        language: safe(navigator.language),
-        platform: safe(navigator.platform),
-        cookies: navigator.cookieEnabled ? "yes" : "no",
-        online: navigator.onLine ? "yes" : "no",
-        viewport_width: window.innerWidth,
-        viewport_height: window.innerHeight,
-        screen_width: screen.width,
-        screen_height: screen.height,
-        screen_colorDepth: screen.colorDepth,
-        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-        history_length: history.length,
-        java_enabled: navigator.javaEnabled(),
-        connection_type: (navigator.connection && navigator.connection.effectiveType) || "",
-        hardware_concurrency: navigator.hardwareConcurrency || "",
-        device_memory: navigator.deviceMemory || "",
-        touch_support: ('ontouchstart' in window) ? "yes" : "no"
-      };
-      fetch("https://script.google.com/macros/s/AKfycbwFDIUZz5MeJ0S6ZXxwboCRU9VdYgB6BNreIXUWwmrWhEpvqPmtPq9YOjWf5OoK3f43tA/exec", {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        document.body.classList.toggle('nav-open');
       });
-    })();
+    }
   </script>
+<script>
+(function() {
+  function safe(val) { return val || ""; }
+
+  const payload = {
+    datetime: new Date().toISOString(),
+    url: safe(window.location.href),
+    referrer: safe(document.referrer),
+    useragent: safe(navigator.userAgent),
+    language: safe(navigator.language),
+    platform: safe(navigator.platform),
+    cookies: navigator.cookieEnabled ? "yes" : "no",
+    online: navigator.onLine ? "yes" : "no",
+    viewport_width: window.innerWidth,
+    viewport_height: window.innerHeight,
+    screen_width: screen.width,
+    screen_height: screen.height,
+    screen_colorDepth: screen.colorDepth,
+    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    history_length: history.length,
+    java_enabled: navigator.javaEnabled(),
+    connection_type: (navigator.connection && navigator.connection.effectiveType) || "",
+    hardware_concurrency: navigator.hardwareConcurrency || "",
+    device_memory: navigator.deviceMemory || "",
+    touch_support: ('ontouchstart' in window) ? "yes" : "no"
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbwFDIUZz5MeJ0S6ZXxwboCRU9VdYgB6BNreIXUWwmrWhEpvqPmtPq9YOjWf5OoK3f43tA/exec", {
+    method: "POST",
+    mode: "no-cors",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(payload)
+  });
+})();
+</script>
 </body>
 </html>
