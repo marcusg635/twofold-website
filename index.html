@@ -180,7 +180,7 @@
           </div>
           <div>
             <h3 style="font-size:1rem;margin-bottom:0.4rem;">Photo examples</h3>
-            <p style="font-size:0.9rem;color:#d1d5db;margin-bottom:0.5rem;">
+            <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:0.5rem;">
               Kelly’s photo work is shown on the photography page with examples from real weddings.
             </p>
             <a href="photography.html" class="btn btn-outline">View wedding photography</a>
@@ -220,16 +220,6 @@
     }
   </script>
 <script>
-  const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
-
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      document.body.classList.toggle('nav-open');
-    });
-  }
-</script>
-<script>
 (function() {
   function safe(val) { return val || ""; }
 
@@ -256,10 +246,10 @@
     touch_support: ('ontouchstart' in window) ? "yes" : "no"
   };
 
-  fetch(https://script.google.com/macros/s/AKfycbwFDIUZz5MeJ0S6ZXxwboCRU9VdYgB6BNreIXUWwmrWhEpvqPmtPq9YOjWf5OoK3f43tA/exec, {
+  fetch("https://script.google.com/macros/s/AKfycbwFDIUZz5MeJ0S6ZXxwboCRU9VdYgB6BNreIXUWwmrWhEpvqPmtPq9YOjWf5OoK3f43tA/exec", {
     method: "POST",
     mode: "no-cors",
-    contentType: "application/json",
+    headers: {"Content-Type": "application/json"},
     body: JSON.stringify(payload)
   });
 })();
