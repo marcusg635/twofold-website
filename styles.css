@@ -949,10 +949,6 @@ header {
   box-shadow: 0 8px 22px rgba(23, 18, 11, 0.06);
 }
 
-.nav-links {
-  gap: 0.4rem;
-}
-
 .nav-links a {
   font-weight: 600;
 }
