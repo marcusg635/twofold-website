@@ -19,7 +19,7 @@
     });
 
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 900 && body.classList.contains('nav-open')) {
+      if (window.innerWidth > 1100 && body.classList.contains('nav-open')) {
         setState(false);
       }
     });
