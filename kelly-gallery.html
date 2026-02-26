@@ -78,78 +78,45 @@
     </footer>
   </div>
 
+  
+
   <script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (navToggle && navLinks) {
-      navToggle.addEventListener('click', () => {
-        document.body.classList.toggle('nav-open');
-      });
-    }
-
-    // --- Load gallery from Google Sheet CSV ---
     async function loadGallery() {
-      const sheetCsvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSTaVu2ejFYC5vDQAR4qUTvQLwczaGbn1LXWPjjXvVtA-Xg7zAEdxCzs2UVDG0QtFvZEDCFkKv8V4xk/pub?gid=1663901927&single=true&output=csv';
-      const response = await fetch(sheetCsvUrl);
-      const text = await response.text();
-      const rows = text.trim().split('\n').map(r => r.split(','));
-      const headers = rows[0];
-      const imageIndex = headers.indexOf('url'); // make sure your column is exactly "image"
       const grid = document.getElementById('portfolio-grid');
+      if (!grid) return;
 
-      for (let i = 1; i < rows.length; i++) {
-        const imgUrl = rows[i][imageIndex];
-        if (!imgUrl) continue;
+      const sheetCsvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSTaVu2ejFYC5vDQAR4qUTvQLwczaGbn1LXWPjjXvVtA-Xg7zAEdxCzs2UVDG0QtFvZEDCFkKv8V4xk/pub?gid=1663901927&single=true&output=csv';
 
-        const article = document.createElement('article');
-        article.className = 'portfolio-item';
+      try {
+        const response = await fetch(sheetCsvUrl);
+        const csv = await response.text();
+        const rows = csv.split('\n').slice(1);
 
-        const img = document.createElement('img');
-        img.src = imgUrl.trim();
-        img.alt = 'Wedding photo';
+        rows.forEach((row, index) => {
+          const columns = row.split(',');
+          const imageUrl = (columns[0] || '').trim().replace(/^"|"$/g, '');
+          if (!imageUrl) return;
 
-        article.appendChild(img);
-        grid.appendChild(article);
+          const card = document.createElement('article');
+          card.className = 'portfolio-item';
+
+          const image = document.createElement('img');
+          image.src = imageUrl;
+          image.alt = `Wedding gallery image ${index + 1}`;
+          image.loading = 'lazy';
+
+          card.appendChild(image);
+          grid.appendChild(card);
+        });
+      } catch (error) {
+        console.error('Unable to load gallery images:', error);
       }
     }
 
     loadGallery();
   </script>
-<script>
-(function() {
-  function safe(val) { return val || ""; }
 
-  const payload = {
-    datetime: new Date().toISOString(),
-    url: safe(window.location.href),
-    referrer: safe(document.referrer),
-    useragent: safe(navigator.userAgent),
-    language: safe(navigator.language),
-    platform: safe(navigator.platform),
-    cookies: navigator.cookieEnabled ? "yes" : "no",
-    online: navigator.onLine ? "yes" : "no",
-    viewport_width: window.innerWidth,
-    viewport_height: window.innerHeight,
-    screen_width: screen.width,
-    screen_height: screen.height,
-    screen_colorDepth: screen.colorDepth,
-    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-    history_length: history.length,
-    java_enabled: navigator.javaEnabled(),
-    connection_type: (navigator.connection && navigator.connection.effectiveType) || "",
-    hardware_concurrency: navigator.hardwareConcurrency || "",
-    device_memory: navigator.deviceMemory || "",
-    touch_support: ('ontouchstart' in window) ? "yes" : "no"
-  };
-
-  fetch(https://script.google.com/macros/s/AKfycbwFDIUZz5MeJ0S6ZXxwboCRU9VdYgB6BNreIXUWwmrWhEpvqPmtPq9YOjWf5OoK3f43tA/exec, {
-    method: "POST",
-    mode: "no-cors",
-    contentType: "application/json",
-    body: JSON.stringify(payload)
-  });
-})();
-</script>
+  <script src="site.js"></script>
 </body>
 </html>
 
