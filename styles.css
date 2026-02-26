@@ -947,26 +947,14 @@ header {
   backdrop-filter: blur(12px);
   background: rgba(255, 255, 255, 0.82);
   box-shadow: 0 8px 22px rgba(23, 18, 11, 0.06);
-  align-items: flex-start;
 }
 
 .nav-links {
-  gap: 0.8rem;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  row-gap: 0.55rem;
+  gap: 1rem;
 }
 
 .nav-links a {
   font-weight: 600;
-}
-
-.btn-booking {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.42rem 0.85rem;
-  line-height: 1.2;
 }
 
 .hero-banner,
@@ -978,16 +966,7 @@ header {
 }
 
 .hero-banner {
-  min-height: clamp(360px, 52vw, 500px);
-}
-
-.page-hero {
-  min-height: clamp(240px, 36vw, 340px);
-}
-
-.hero-banner img.hero-bg,
-.page-hero img.hero-bg {
-  object-position: center 22%;
+  min-height: 560px;
 }
 
 .hero-banner::after,
@@ -1031,12 +1010,10 @@ footer {
   header {
     top: 0.35rem;
     padding: 0.75rem 0.9rem;
-    align-items: center;
   }
 
   .nav-links {
     padding-top: 0.35rem;
-    gap: 0.6rem;
   }
 
   body.nav-open .nav-links {
@@ -1053,15 +1030,6 @@ footer {
   }
 
   .hero-banner {
-    min-height: 380px;
-  }
-
-  .page-hero {
-    min-height: 230px;
-  }
-
-  .hero-banner img.hero-bg,
-  .page-hero img.hero-bg {
-    object-position: center 20%;
+    min-height: 440px;
   }
 }
